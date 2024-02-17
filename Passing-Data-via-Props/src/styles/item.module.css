@@ -1,0 +1,9 @@
+.list {
+  background-color: khaki;
+  color: blueviolet;
+  margin: 5px 0px 5px 15px;
+}
+
+.button {
+  float: right;
+}

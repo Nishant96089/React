@@ -1,0 +1,9 @@
+.list {
+  background-color: rgba(240, 230, 140, 0.392);
+  color: rgb(34, 26, 41);
+  margin: 5px 0px 5px 0px;
+}
+
+.call {
+  float: right;
+}
