@@ -6,6 +6,7 @@ function DisplayContent({ tasks, delBtn }) {
     <div id={DisplayCss.itemsContainer}>
       {tasks.map((item) => (
         <DisplayTask
+          key={item.name}
           taskname={item.name}
           taskdate={item.date}
           delBtn={delBtn}

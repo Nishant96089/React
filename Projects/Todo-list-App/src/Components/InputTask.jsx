@@ -1,24 +1,26 @@
+import { MdAddComment } from "react-icons/md";
+
 function InputTask({ addTask }) {
   return (
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-6">
+    <div className="container text-center">
+      <div className="row">
+        <div className="col-6">
           <input type="text" placeholder="Enter your task" id="text" />
         </div>
-        <div class="col-4">
+        <div className="col-4">
           <input type="date" id="date" />
         </div>
-        <div class="col-2">
+        <div className="col-2">
           <button
             type="button"
-            class="btn btn-success"
+            className="btn btn-success"
             onClick={() => {
               addTask(text.value, date.value);
               text.value = "";
               date.value = "";
             }}
           >
-            Add
+            <MdAddComment />
           </button>
         </div>
       </div>

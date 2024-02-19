@@ -28,7 +28,7 @@ function App() {
   };
 
   return (
-    <center class="todo-container">
+    <center className="todo-container">
       <AppName />
       <InputTask addTask={addTask} />
       {tasks.length === 0 && <p>Enjoy your Day!</p>}

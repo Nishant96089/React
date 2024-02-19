@@ -1,3 +1,5 @@
+import { MdOutlineDeleteForever } from "react-icons/md";
+
 function DisplayTask({ taskname, taskdate, delBtn }) {
   return (
     <div class="container items-container">
@@ -10,7 +12,7 @@ function DisplayTask({ taskname, taskdate, delBtn }) {
             class="btn btn-danger"
             onClick={() => delBtn(taskname)}
           >
-            Delete
+            <MdOutlineDeleteForever />
           </button>
         </div>
       </div>
