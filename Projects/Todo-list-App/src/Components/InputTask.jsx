@@ -1,8 +1,14 @@
 import { MdAddComment } from "react-icons/md";
 
 function InputTask({ addTask }) {
+  const submitBehaviour = (event) => {
+    event.preventDefault();
+    addTask(text.value, date.value);
+    text.value = "";
+    date.value = "";
+  };
   return (
-    <div className="container text-center">
+    <form onSubmit={submitBehaviour} className="container text-center">
       <div className="row">
         <div className="col-6">
           <input type="text" placeholder="Enter your task" id="text" />
@@ -11,20 +17,12 @@ function InputTask({ addTask }) {
           <input type="date" id="date" />
         </div>
         <div className="col-2">
-          <button
-            type="button"
-            className="btn btn-success"
-            onClick={() => {
-              addTask(text.value, date.value);
-              text.value = "";
-              date.value = "";
-            }}
-          >
+          <button className="btn btn-success">
             <MdAddComment />
           </button>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
 
