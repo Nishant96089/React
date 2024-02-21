@@ -5,18 +5,26 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  let [tasks, newtasks] = useState([]);
+  const [tasks, newtasks] = useState([]);
 
   let addTask = (textVal, dateVal) => {
     if (textVal && dateVal) {
-      let newVal = [
-        ...tasks,
+      // let newVal = [
+      //   ...tasks,
+      //   {
+      //     name: textVal,
+      //     date: dateVal,
+      //   },
+      // ];
+      // newtasks(newVal);
+
+      newtasks((currVal) => [
+        ...currVal,
         {
           name: textVal,
           date: dateVal,
         },
-      ];
-      newtasks(newVal);
+      ]);
     } else {
       alert("Kindly input the tasks you need to add!");
     }
