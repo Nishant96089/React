@@ -3,6 +3,7 @@ import InputTask from "./Components/InputTask";
 import DisplayContent from "./Components/DisplayContent";
 import "./App.css";
 import { useState } from "react";
+import { TodoItems } from "./store/TodoItems";
 
 function App() {
   const [tasks, newtasks] = useState([]);
@@ -36,12 +37,14 @@ function App() {
   };
 
   return (
-    <center className="todo-container">
-      <AppName />
-      <InputTask addTask={addTask} />
-      {tasks.length === 0 && <p>Enjoy your Day!</p>}
-      <DisplayContent tasks={tasks} delBtn={delBtn}></DisplayContent>
-    </center>
+    <TodoItems.Provider value={{ tasks, addTask, delBtn }}>
+      <center className="todo-container">
+        <AppName />
+        <InputTask />
+        {tasks.length === 0 && <p>Enjoy your Day!</p>}
+        <DisplayContent></DisplayContent>
+      </center>
+    </TodoItems.Provider>
   );
 }
 

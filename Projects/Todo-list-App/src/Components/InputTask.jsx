@@ -1,7 +1,12 @@
+import { useContext } from "react";
+import { TodoItems } from "../store/TodoItems";
 import { useRef } from "react";
 import { MdAddComment } from "react-icons/md";
 
-function InputTask({ addTask }) {
+const InputTask = () => {
+  const todoItemsContext = useContext(TodoItems);
+  const addTask = todoItemsContext.addTask;
+
   const textRef = useRef(null);
   const dateRef = useRef(null);
 
@@ -29,6 +34,6 @@ function InputTask({ addTask }) {
       </div>
     </form>
   );
-}
+};
 
 export default InputTask;

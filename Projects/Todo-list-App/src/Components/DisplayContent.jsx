@@ -1,7 +1,14 @@
+import { useContext } from "react";
+import { TodoItems } from "../store/TodoItems";
+
 import DisplayTask from "./DisplayTask";
 import DisplayCss from "../styles/Display.module.css";
 
-function DisplayContent({ tasks, delBtn }) {
+const DisplayContent = () => {
+  const todoItemsContext = useContext(TodoItems);
+  const tasks = todoItemsContext.tasks;
+  const delBtn = todoItemsContext.delBtn;
+
   return (
     <div id={DisplayCss.itemsContainer}>
       {tasks.map((item) => (
@@ -14,6 +21,6 @@ function DisplayContent({ tasks, delBtn }) {
       ))}
     </div>
   );
-}
+};
 
 export default DisplayContent;
